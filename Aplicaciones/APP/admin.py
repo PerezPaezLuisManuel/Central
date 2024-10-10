@@ -4,7 +4,11 @@ from .models import *
 #TABLA CATEGORIA
 @admin.register(Categoria)
 class CategoriaAdmin(admin.ModelAdmin):
-    pass    
+    search_fields = ('nombre',)
+    list_display = ('id', 'nombre')
+    list_display_links = ('nombre',)
+    #list_filter = ('')
+    list_per_page = 15    
 
 #TABLA PROMOCION
 @admin.register(Promocion)
